@@ -1,26 +1,94 @@
-# Python Package Exercise
+# CodeShakespeare
 
-## Shakespeare Quote Generator
+[![CI - Build and Test](https://github.com/software-students-fall2024/software-engineering-fall-2024-3-python-package-python-package-exercise/actions/workflows/ci.yml/badge.svg)](https://github.com/software-students-fall2024/software-engineering-fall-2024-3-python-package-python-package-exercise/actions/workflows/ci.yml)
 
-[badge here]
+CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience. 
 
-Our Python package generates humorous quotes based on Shakespeare’s writings with a computer science twist to it!
+***Package Page:*** [Link](https://pypi.org/project/CodeShakespeare/)
 
-***Package Page:*** [Link](https://pypi.org/)
 
-## Package Installation
 
-To install the package, run:
+## Installation
+Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below are examples for all major functions:
+
+
+1. Install the package from PyPI:
+```
+pip install CodeShakespeare
+```
+
+2. Import the functions in your Python code:
+```
+from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message
+```
+
+
+## Usage Examples
+
+### 1. to_shakespeare(message: str, formality: str) -> str
+
+This function allows user to transform regular commpent into Shakesperean prose with varying formality. The different options for formality include: 
+    
+noble, courtly, dramatic.
+```
+print(to_shakespeare("This is a test comment", formality="noble"))
+```
+### 2. to_shakespeare_error(message: str, severity: str) -> str
+
+    
+This function turns an error message into Shakesperean style with varying levels of severity. The different options for severity include:
+
+tragedy, comedy, history
+```
+print(to_shakespeare_error("File not found", severity="tragedy"))
+```
+
+### 3. get_random_shakespeare_quote(style: str) -> str
+This function returns a random Shakesperean quote in different styles. The different options for styles include:
+
+playful, serious, melancholic
+```
+print(get_random_shakespeare_quote(style="playful"))
+```
+### 4. generate_shakespearean_commit_message(emotion: str)-> str
+This function generates a Shakespearean commit message based on emotion. Differnt options for emotions include:
+
+victory, defeat, reflection
 
 ```
-pip install xxxx
+print(generate_shakespearean_commit_message(emotion="victory"))
 ```
+
+### For a complete example, see [test_codeshakespeare.py](tests/test_codeshakespeare.py)
 
 ## Contributing
 
-- Description of how a developer who wants to import your project into their own code can do so - include documentation and code examples for all functions in your package and a link to an example Python program that uses each of them.
+If you'd like to contribute to the project, follow these steps to sset up the development enviroment and get started:
 
-- How a developer who wants to contribute to your project can set up the virtual environment, install dependencies, and build and test your package for themselves.
+#### 1. Clone the Repository:
+```
+git clone https://github.com/software-students-fall2024/software-engineering-fall-2024-3-python-package-python-package-exercise
+
+cd 3-python-package-wear
+```
+#### 2. Create a Virtual Enviroment:
+```
+python3 -m venv myenv
+source myenv/bin/activate  # On Windows use `myenv\Scripts\activate`
+```
+
+#### 3. Install Dependencies
+```
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### 4. Build and test the package
+```
+python -m build
+pip install .  # Install the package locally for testing
+python -m unittest discover -s tests -p "test_codeshakespeare.py"
+```
 
 ## How to Configure & Run Our Package
 
