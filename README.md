@@ -133,7 +133,13 @@ pipenv install --dev twine
 pipenv run python -m build
 ```
 
-## Usage Examples - Running example python
+**4. Run Unit Tests**
+```
+export PYTHONPATH=src
+python -m unittest discover -s tests -p "test_codeshakespeare.py"
+``` 
+
+## Usage Examples
 
 To run our example program, (see [example_shakespeare.py](./example_shakespeare.py)) you can run the follwing commands in your terminal:
 
