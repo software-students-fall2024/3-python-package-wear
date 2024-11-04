@@ -53,15 +53,21 @@ To work on this project, it’s recommended to use a virtual environment to isol
 
 **1. Update Pip and Python:** 
 
-```python3 -m pip --version```
+```
+python3 -m pip --version
+```
 
 **2. ***Update SetupTools and Wheel:**
 
- ```python3 -m pip install --upgrade pip setuptools wheel ```
+ ```
+ python3 -m pip install --upgrade pip setuptools wheel
+```
 
 **3. Install pipenv locally:** 
 
-```python3 -m pip install --user pipenv```
+```
+python3 -m pip install --user pipenv
+```
 
 **4. Navigate to project directory**
    
