@@ -1,8 +1,8 @@
-# CodeShakespeare
+# CODESHAKESPEARE
 
 ![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg)
 
-## Table of Contents
+## TABLE OF CONTENTS
 1. [Description](#description)
 2. [PyPI Page](#pypi-page)
 3. [Installation](#installation)
@@ -34,10 +34,10 @@ You can find CodeShakespeare on PyPI here: [Link](https://pypi.org/project/CodeS
 
 To work on this project, it’s recommended to use a virtual environment to isolate dependencies. Follow these steps to create, activate, deactivate, and install all dependencies.
 
-
 ## Installation
 Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below is how to install the package:
 ### 1. Install the package from PyPI
+
 
 ```
 pip install CodeShakespeare
@@ -135,7 +135,7 @@ deactivate
 ```
 
 
-## Usage Examples
+## USAGE EXAMPLES
 
 #### 1. to_shakespeare(message: str, formality: str) -> str
 
@@ -175,7 +175,7 @@ print(generate_shakespearean_commit_message(emotion="victory"))
 ### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
 
 
-## Contributing
+## CONTRIBUTING
 
 If you'd like to contribute to the project, follow these steps to sset up the development enviroment and get started:
 
@@ -204,8 +204,7 @@ pip install .  # Install the package locally for testing
 python -m unittest discover -s tests -p "test_codeshakespeare.py"
 ```
 
-
-## Team Members
+## TEAM MEMBERS
 
 - ***Emily Huang:*** ([emilyjhuang](https://github.com/emilyjhuang))
 - ***Wenli Shi:*** ([WenliShi2332](https://github.com/WenliShi2332))
