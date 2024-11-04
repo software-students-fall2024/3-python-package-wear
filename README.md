@@ -1,6 +1,6 @@
 # CODESHAKESPEARE
 
-![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg)
+![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg?branch=main)
 
 ## TABLE OF CONTENTS
 1. [Description](#description)
@@ -13,7 +13,7 @@
 8. [Team Members](#team-members)
 
 ## Description
-![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg)
+CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience.
 
 ## Table of Contents
 1. [Description](#description)
@@ -36,55 +36,57 @@ To work on this project, it’s recommended to use a virtual environment to isol
 
 ## Installation
 Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below is how to install the package:
-### 1. Install the package from PyPI
 
-
+**1. Install the package from PyPI**
 ```
 pip install CodeShakespeare
 ```
 
-### 2. Import the functions in your Python code
-```from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message```
-2. Import the functions in your Python code:
+**2. Import the functions in your Python code**
 ```
 from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message
 ```
+
 ## Virtual Environment & Dependencies
 
 To work on this project, it’s recommended to use a virtual environment to isolate dependencies. Follow these steps to create, activate, deactivate, and install all dependencies.
 
 **1. Update Pip and Python:** 
+
 ```python3 -m pip --version```
 
 **2. ***Update SetupTools and Wheel:**
+
  ```python3 -m pip install --upgrade pip setuptools wheel ```
 
 **3. Install pipenv locally:** 
+
 ```python3 -m pip install --user pipenv```
 
 **4. Navigate to project directory**
-   
-   *Mac:* 
-   ```
-   cd ~/Desktop/3-python-package-wear-main
-   ```
-   
-   *Windows:* 
-   ```
-   cd %UserProfile%\Desktop\3-python-package-wear-main
-   ```
+   
+- **Mac:** 
+
+```
+cd ~/Desktop/Project3
+```
+   
+- **Windows:** 
+```
+cd %UserProfile%\Desktop\Project3
+```
 
 **5. Create a Virtual Environment**
 - **Mac/Linux:**
-  ```
-  python3 -m venv myenv
-  source myenv/bin/activate
-  ```
+  ```
+  python3 -m venv myenv
+  source myenv/bin/activate
+  ```
 - **Windows**
-    ```
-      python -m venv myenv
-      myenv\Scripts\activate
-    ```
+    ```
+      python -m venv myenv
+      myenv\Scripts\activate
+    ```
 ```
 pip install -r requirements.txt
 ```
@@ -176,9 +178,9 @@ victory, defeat, reflection
 print(generate_shakespearean_commit_message(emotion="victory"))
 ```
 
-#### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
-
 ### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
+
+#### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
 
 
 ## CONTRIBUTING
