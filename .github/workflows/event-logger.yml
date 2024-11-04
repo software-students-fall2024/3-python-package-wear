@@ -27,9 +27,14 @@ jobs:
         with:
           fetch-depth: 0  # fetches full history
 
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4  # Ensure using the latest version of setup-python
         with:
           python-version: "3.11"
+
+      - name: Setup Node.js  # Add Node.js setup for compatibility with latest GitHub actions
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       - name: Install dependencies
         env:
@@ -67,15 +72,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10, 3.11]
+        python-version: [3.8, 3.9, 3.10, 3.11]  # Ensure valid Python versions are specified
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+
+      - name: Setup Node.js  # Add Node.js setup for compatibility
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       - name: Install pipenv
         env:
@@ -84,11 +94,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install --user pipenv
 
-      - name: Install dependencies
+      - name: Set up pipenv environment
         env:
           PIPENV_IGNORE_VIRTUALENVS: 1
         run: |
+          pipenv install --python $(which python) --dev  # Ensure pipenv uses the correct Python version
+
+      - name: Install dependencies with pipenv
+        run: |
+          pipenv lock --clear
           pipenv install --dev
+
+      - name: Verify Python Version
+        run: |
+          pipenv --python
+          python --version
+          pipenv --venv
 
       - name: Run tests
         env:
