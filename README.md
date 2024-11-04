@@ -16,20 +16,6 @@
 
 CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience.
 
-## Table of Contents
-1. [Description](#description)
-2. [PyPI Page](#pypi-page)
-3. [Installation](#installation)
-4. [Virtual Environment & Dependencies](#virtual-environment--dependencies)
-5. [Build, Test, and Run the CodeShakespeare Package](#build-test-and-run-the-codeshakespeare-package)
-6. [Usage Examples](#usage-examples)
-7. [Contributing](#contributing)
-8. [Team Members](#team-members)
-
-## Description
-
-CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience. 
-
 ## PyPi Page
 
 You can find CodeShakespeare on PyPI here: [Link](https://pypi.org/project/CodeShakespeare/)
@@ -203,7 +189,6 @@ victory, defeat, reflection
 print(generate_shakespearean_commit_message(emotion="victory"))
 ```
 
-
 ## Contributing
 
 If you'd like to contribute to the project, follow these steps to sset up the development enviroment and get started:
@@ -229,7 +214,7 @@ pip install -r requirements.txt
 #### 4. Build and test the package
 ```
 python -m build
-pip install .  # Install the package locally for testing
+pip install . 
 python -m unittest discover -s tests -p "test_codeshakespeare.py"
 ```
 
