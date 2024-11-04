@@ -35,7 +35,8 @@ You can find CodeShakespeare on PyPI here: [Link](https://pypi.org/project/CodeS
 To work on this project, it’s recommended to use a virtual environment to isolate dependencies. Follow these steps to create, activate, deactivate, and install all dependencies.
 
 ## Installation
-Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below is how to install the package:
+Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below are examples for all major functions:
+
 ### 1. Install the package from PyPI
 ```
 pip install CodeShakespeare
@@ -43,98 +44,10 @@ pip install CodeShakespeare
 
 ### 2. Import the functions in your Python code
 ```from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message```
-2. Import the functions in your Python code:
-```
-from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message
-```
-## Virtual Environment & Dependencies
-
-To work on this project, it’s recommended to use a virtual environment to isolate dependencies. Follow these steps to create, activate, deactivate, and install all dependencies.
-
-**1. Update Pip and Python:** 
-```python3 -m pip --version```
-
-**2. ***Update SetupTools and Wheel:**
- ```python3 -m pip install --upgrade pip setuptools wheel ```
-
-**3. Install pipenv locally:** 
-```python3 -m pip install --user pipenv```
-
-**4. Navigate to project directory**
-   
-      *Mac:* ```cd ~/Desktop/Project3```
-   
-      *Windows:* ```cd %UserProfile%\Desktop\Project3```
-
-**5. Create a Virtual Environment**
-- **Mac/Linux:**
-  ```
-  python3 -m venv myenv
-  source myenv/bin/activate
-  ```
-- **Windows**
-    ```
-      python -m venv myenv
-      myenv\Scripts\activate
-    ```
-```
-pip install -r requirements.txt
-```
-
-**6. Create and Activate a Virtual Environment with Pipenv**
-Use pipenv to set up a virtual environment and install development dependencies:
-
-```
-pipenv install --dev
-pipenv shell 
-```
-
-**7. Install Dependencies Loaclly**
-```
-pip install .
-```
-
-**8. Deactivate when Done**
-```
-deactivate
-```
-
-## Build, Test, and Run the CodeShakespeare Package
-
-Follow these steps to build, test, and run the CodeShakespeare package using `pipenv`, `build`, and `twine`. 
-
-**1. Set Up the Development Environment**
-First, create a virtual environment and install dependencies:
-
-```
-pipenv install --dev 
-```
-
-**2. Install build and twine**
-To build and upload the package, install build and twine:
-
-```
-pipenv install --dev build
-pipenv install --dev twine
-```
-
-**3. Build the Package**
-```
-pipenv run python -m build
-```
-
-**4. Testing the Package**
-```
-python3 -m venv test_env
-source test_env/bin/activate
-pip install CodeShakespeare
-python test_shakespeare.py 
-deactivate
-```
 
 ## Usage Examples
 
-### 1. to_shakespeare(message: str, formality: str) -> str
+#### 1. to_shakespeare(message: str, formality: str) -> str
 
 This function allows user to transform regular commpent into Shakesperean prose with varying formality. The different options for formality include: 
     
@@ -142,7 +55,7 @@ noble, courtly, dramatic.
 ```
 print(to_shakespeare("This is a test comment", formality="noble"))
 ```
-### 2. to_shakespeare_error(message: str, severity: str) -> str
+#### 2. to_shakespeare_error(message: str, severity: str) -> str
     
 This function turns an error message into Shakesperean style with varying levels of severity. The different options for severity include:
 
@@ -151,14 +64,14 @@ tragedy, comedy, history
 print(to_shakespeare_error("File not found", severity="tragedy"))
 ```
 
-### 3. get_random_shakespeare_quote(style: str) -> str
+#### 3. get_random_shakespeare_quote(style: str) -> str
 This function returns a random Shakesperean quote in different styles. The different options for styles include:
 
 playful, serious, melancholic
 ```
 print(get_random_shakespeare_quote(style="playful"))
 ```
-### 4. generate_shakespearean_commit_message(emotion: str)-> str
+#### 4. generate_shakespearean_commit_message(emotion: str)-> str
 This function generates a Shakespearean commit message based on emotion. Differnt options for emotions include:
 
 victory, defeat, reflection
@@ -169,7 +82,7 @@ print(generate_shakespearean_commit_message(emotion="victory"))
 
 ### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
 
-### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
+#### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
 
 
 ## Contributing
@@ -203,35 +116,59 @@ python -m unittest discover -s tests -p "test_codeshakespeare.py"
 
 ## How to Configure & Run Our Package
 
-### 1. Update Pip and Python
-   ```python3 -m pip --version```
+#### 1. Update Pip and Python
+   ```
+   python3 -m pip --version
+   ```
 
-### 2. Update SetupTools and Wheel
-   ```python3 -m pip install --upgrade pip setuptools wheel ```
+#### 2. Update SetupTools and Wheel
+   ```
+   python3 -m pip install --upgrade pip setuptools wheel
+   ```
 
-### 3. Install pipenv locally
-   ```python3 -m pip install --user pipenv```
+#### 3. Install pipenv locally
+   ```
+   python3 -m pip install --user pipenv
+   ```
 
-### 4. Navigate to project directory
+#### 4. Navigate to project directory
 
-      *Mac:* ```cd ~/Desktop/3-python-package-wear-main```
+      *Mac:* 
+      ```
+      cd ~/Desktop/3-python-package-wear-main
+      ```
       
-      *Windows:* ```cd %UserProfile%\Desktop\3-python-package-wear-main```
+      *Windows:* 
+      ```
+      cd %UserProfile%\Desktop\3-python-package-wear-main
+      ```
 
-### 5. Create & activate virtual env
-   ```pipenv shell```
+#### 5. Create & activate virtual env
+   ```
+   pipenv shell
+   ```
 
-### 6. Install all Dependencies
-    ```pipenv install --dev```
+#### 6. Install all Dependencies
+    ```
+    pipenv install --dev
+    ```
 
-### 7. Install PyTest for testing
-    ```pipenv install pytest --dev```
+#### 7. Install PyTest for testing
+    ```
+    pipenv install pytest --dev
+    ```
 
-### 8. Run tests
+#### 8. Run tests
    
-      *Mac:* ```PYTHONPATH=src pytest tests/test_codeshakespeare.py```
+      *Mac:* 
+      ```
+      PYTHONPATH=src pytest tests/test_codeshakespeare.py
+      ```
    
-      *Windows:* ```$env:PYTHONPATH="src"; pytest tests/test_codeshakespeare.py```
+      *Windows:* 
+      ```
+      $env:PYTHONPATH="src"; pytest tests/test_codeshakespeare.py
+      ```
 
 
 ## Team Members
