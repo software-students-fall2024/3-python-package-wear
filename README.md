@@ -1,8 +1,8 @@
-# CodeShakespeare
+# CODESHAKESPEARE
 
 ![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg)
 
-## Table of Contents
+## TABLE OF CONTENTS
 1. [Description](#description)
 2. [PyPI Page](#pypi-page)
 3. [Installation](#installation)
@@ -12,13 +12,13 @@
 7. [Contributing](#contributing)
 8. [Team Members](#team-members)
 
-## Description
+## DESCRIPTION
 
 CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience. 
 
 ### CodeShakespeare PyPI [Link](https://pypi.org/project/CodeShakespeare/)
 
-## Installation
+## INSTALLATION
 Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below are examples for all major functions:
 
 #### 1. Install the package from PyPI
@@ -31,7 +31,7 @@ pip install CodeShakespeare
 from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message
 ```
 
-## Usage Examples
+## USAGE EXAMPLES
 
 #### 1. to_shakespeare(message: str, formality: str) -> str
 
@@ -69,7 +69,7 @@ print(generate_shakespearean_commit_message(emotion="victory"))
 #### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
 
 
-## Contributing
+## CONTRIBUTING
 
 If you'd like to contribute to the project, follow these steps to sset up the development enviroment and get started:
 
@@ -98,7 +98,7 @@ pip install .  # Install the package locally for testing
 python -m unittest discover -s tests -p "test_codeshakespeare.py"
 ```
 
-## How to Configure & Run Our Package
+## HOW TO CONFIGURE & RUN CODESHAKESPEARE
 
 #### 1. Update Pip and Python
    ```
@@ -116,16 +116,15 @@ python -m unittest discover -s tests -p "test_codeshakespeare.py"
    ```
 
 #### 4. Navigate to project directory
-
-      *Mac:* 
-      ```
-      cd ~/Desktop/3-python-package-wear-main
-      ```
-      
-      *Windows:* 
-      ```
-      cd %UserProfile%\Desktop\3-python-package-wear-main
-      ```
+   *Mac:* 
+   ```
+   cd ~/Desktop/3-python-package-wear-main
+   ```
+   
+   *Windows:* 
+   ```
+   cd %UserProfile%\Desktop\3-python-package-wear-main
+   ```
 
 #### 5. Create & activate virtual env
    ```
@@ -133,28 +132,28 @@ python -m unittest discover -s tests -p "test_codeshakespeare.py"
    ```
 
 #### 6. Install all Dependencies
-    ```
-    pipenv install --dev
-    ```
+   ```
+   pipenv install --dev
+   ```
 
 #### 7. Install PyTest for testing
-    ```
-    pipenv install pytest --dev
-    ```
+   ```
+   pipenv install pytest --dev
+   ```
 
 #### 8. Run tests
    
-      *Mac:* 
-      ```
-      PYTHONPATH=src pytest tests/test_codeshakespeare.py
-      ```
+   *Mac:* 
+   ```
+   PYTHONPATH=src pytest tests/test_codeshakespeare.py
+   ```
    
-      *Windows:* 
-      ```
-      $env:PYTHONPATH="src"; pytest tests/test_codeshakespeare.py
-      ```
+   *Windows:* 
+   ```
+   $env:PYTHONPATH="src"; pytest tests/test_codeshakespeare.py
+   ```
 
-## Team Members
+## TEAM MEMBERS
 
 - ***Emily Huang:*** ([emilyjhuang](https://github.com/emilyjhuang))
 - ***Wenli Shi:*** ([WenliShi2332](https://github.com/WenliShi2332))
