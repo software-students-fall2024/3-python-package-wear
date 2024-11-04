@@ -1,6 +1,6 @@
 # CODESHAKESPEARE
 
-![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg)
+![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg?branch=main)
 
 ## TABLE OF CONTENTS
 1. [Description](#description)
