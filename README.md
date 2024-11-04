@@ -66,12 +66,12 @@ To work on this project, it’s recommended to use a virtual environment to isol
    
    *Mac:* 
    ```
-   cd ~/Desktop/Project3
+   cd ~/Desktop/3-python-package-wear-main
    ```
    
    *Windows:* 
    ```
-   cd %UserProfile%\Desktop\Project3
+   cd %UserProfile%\Desktop\3-python-package-wear-main
    ```
 
 **5. Create a Virtual Environment**
