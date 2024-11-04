@@ -4,23 +4,16 @@
 
 CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience. 
 
-***Package Page:*** [Link](https://pypi.org/project/CodeShakespeare/)
-
-
+***CodeShakespeare PyPI Link:*** [Link](https://pypi.org/project/CodeShakespeare/)
 
 ## Installation
 Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below are examples for all major functions:
 
-
 1. Install the package from PyPI:
-```
-pip install CodeShakespeare
-```
+```pip install CodeShakespeare```
 
 2. Import the functions in your Python code:
-```
-from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message
-```
+```from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message```
 
 
 ## Usage Examples
@@ -34,7 +27,6 @@ noble, courtly, dramatic.
 print(to_shakespeare("This is a test comment", formality="noble"))
 ```
 ### 2. to_shakespeare_error(message: str, severity: str) -> str
-
     
 This function turns an error message into Shakesperean style with varying levels of severity. The different options for severity include:
 
@@ -63,7 +55,7 @@ print(generate_shakespearean_commit_message(emotion="victory"))
 
 ## Contributing
 
-If you'd like to contribute to the project, follow these steps to sset up the development enviroment and get started:
+If you'd like to contribute to the project, follow these steps to set up the development enviroment and get started:
 
 #### 1. Clone the Repository:
 ```
@@ -91,12 +83,6 @@ python -m unittest discover -s tests -p "test_codeshakespeare.py"
 ```
 
 ## How to Configure & Run Our Package
-
-- Instructions for how to configure and run all parts of your project for any developer on any platform - these instructions must work!
-
-- Instructions for how to set up any environment variables and import any starter data into the database, as necessary, for the system to operate correctly when run.
-
-- If there are any "secret" configuration files, such as .env or similar files, that are not included in the version control repository, exact instructions for how to create them and what their contents should be must be supplied to the course admins by the due date.
 
 1. ***Update Pip and Python:*** ```python3 -m pip --version```
 
