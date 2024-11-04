@@ -13,6 +13,7 @@
 8. [Team Members](#team-members)
 
 ## Description
+
 CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience.
 
 ## Table of Contents
@@ -30,11 +31,13 @@ CodeShakespeare is a Python package designed to bring the wit and humor of Shake
 CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience. 
 
 ## PyPi Page
+
 You can find CodeShakespeare on PyPI here: [Link](https://pypi.org/project/CodeShakespeare/)
 
 To work on this project, it’s recommended to use a virtual environment to isolate dependencies. Follow these steps to create, activate, deactivate, and install all dependencies.
 
 ## Installation
+
 Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below is how to install the package:
 
 **1. Install the package from PyPI**
@@ -100,6 +103,7 @@ pip install -r requirements.txt
 ```
 
 **6. Create and Activate a Virtual Environment with Pipenv**
+
 Use pipenv to set up a virtual environment and install development dependencies:
 
 ```
@@ -122,6 +126,7 @@ deactivate
 Follow these steps to build, test, and run the CodeShakespeare package using `pipenv`, `build`, and `twine`. 
 
 **1. Set Up the Development Environment**
+
 First, create a virtual environment and install dependencies:
 
 ```
@@ -129,6 +134,7 @@ pipenv install --dev
 ```
 
 **2. Install build and twine**
+
 To build and upload the package, install build and twine:
 
 ```
@@ -140,16 +146,6 @@ pipenv install --dev twine
 ```
 pipenv run python -m build
 ```
-
-**4. Testing the Package**
-```
-python3 -m venv test_env
-source test_env/bin/activate
-pip install CodeShakespeare
-python test_shakespeare.py 
-deactivate
-```
-
 
 ## Usage Examples - Running example python
 
@@ -173,7 +169,6 @@ pip install CodeShakespeare
 ```
 python example_shakespeare.py
 ```
-
 
 #### 1. to_shakespeare(message: str, formality: str) -> str
 
