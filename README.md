@@ -4,7 +4,7 @@
 
 CodeShakespeare is a Python package designed to bring the wit and humor of Shakespearean language to modern programming. This package offers functions to transform comments, error messages, and commit messages into Shakespearean prose, adding a unique twist to your coding experience. 
 
-***CodeShakespeare PyPI Link:*** [Link](https://pypi.org/project/CodeShakespeare/)
+### CodeShakespeare PyPI [Link](https://pypi.org/project/CodeShakespeare/)
 
 ## Installation
 Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below are examples for all major functions:
