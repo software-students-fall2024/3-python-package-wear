@@ -64,9 +64,15 @@ To work on this project, it’s recommended to use a virtual environment to isol
 
 **4. Navigate to project directory**
    
-      *Mac:* ```cd ~/Desktop/Project3```
+   *Mac:* 
+   ```
+   cd ~/Desktop/Project3
+   ```
    
-      *Windows:* ```cd %UserProfile%\Desktop\Project3```
+   *Windows:* 
+   ```
+   cd %UserProfile%\Desktop\Project3
+   ```
 
 **5. Create a Virtual Environment**
 - **Mac/Linux:**
