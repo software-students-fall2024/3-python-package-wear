@@ -151,7 +151,29 @@ deactivate
 ```
 
 
-## Usage Examples
+## Usage Examples - Running example python
+
+To run our example program, (see [example_shakespeare.py](./example_shakespeare.py)) you can run the follwing commands in your terminal:
+
+**1. Open a new virtual environment**
+```
+python3 -m venv myenv
+```
+
+**2. Activate the environment**
+```
+source myenv/bin/activate
+```
+
+**3. pip install the package**
+```
+pip install CodeShakespeare
+```
+**4. run our examply python code**
+```
+python example_shakespeare.py
+```
+
 
 #### 1. to_shakespeare(message: str, formality: str) -> str
 
@@ -185,8 +207,6 @@ victory, defeat, reflection
 ```
 print(generate_shakespearean_commit_message(emotion="victory"))
 ```
-
-### For a complete example, see [example_shakespeare.py](./example_shakespeare.py)
 
 
 ## Contributing
