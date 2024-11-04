@@ -63,6 +63,9 @@ To work on this project, it’s recommended to use a virtual environment to isol
       python -m venv myenv
       myenv\Scripts\activate
     ```
+```
+pip install -r requirements.txt
+```
 
 **6. Create and Activate a Virtual Environment with Pipenv**
 Use pipenv to set up a virtual environment and install development dependencies:
