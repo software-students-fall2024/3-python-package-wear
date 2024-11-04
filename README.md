@@ -147,7 +147,7 @@ pipenv install --dev twine
 pipenv run python -m build
 ```
 
-**4. Test the Package**
+**4. Run Unit Tests**
 ```
 export PYTHONPATH=src
 python -m unittest discover -s tests -p "test_codeshakespeare.py"
