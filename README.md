@@ -1,8 +1,8 @@
-# CodeShakespeare
+# CODESHAKESPEARE
 
 ![Workflow Status](https://github.com/software-students-fall2024/3-python-package-wear/actions/workflows/event-logger.yml/badge.svg)
 
-## Table of Contents
+## TABLE OF CONTENTS
 1. [Description](#description)
 2. [PyPI Page](#pypi-page)
 3. [Installation](#installation)
@@ -35,8 +35,7 @@ You can find CodeShakespeare on PyPI here: [Link](https://pypi.org/project/CodeS
 To work on this project, it’s recommended to use a virtual environment to isolate dependencies. Follow these steps to create, activate, deactivate, and install all dependencies.
 
 ## Installation
-Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below are examples for all major functions:
-
+Developers can import the Shakespeare Quotes Generator package into their own projects using pip. Below is how to install the package:
 ### 1. Install the package from PyPI
 ```
 pip install CodeShakespeare
@@ -44,8 +43,97 @@ pip install CodeShakespeare
 
 ### 2. Import the functions in your Python code
 ```from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message```
+2. Import the functions in your Python code:
+```
+from codeshakespeare import to_shakespeare, to_shakespeare_error, get_random_shakespeare_quote, generate_shakespearean_commit_message
+```
+## Virtual Environment & Dependencies
 
-## Usage Examples
+To work on this project, it’s recommended to use a virtual environment to isolate dependencies. Follow these steps to create, activate, deactivate, and install all dependencies.
+
+**1. Update Pip and Python:** 
+```python3 -m pip --version```
+
+**2. ***Update SetupTools and Wheel:**
+ ```python3 -m pip install --upgrade pip setuptools wheel ```
+
+**3. Install pipenv locally:** 
+```python3 -m pip install --user pipenv```
+
+**4. Navigate to project directory**
+   
+      *Mac:* ```cd ~/Desktop/Project3```
+   
+      *Windows:* ```cd %UserProfile%\Desktop\Project3```
+
+**5. Create a Virtual Environment**
+- **Mac/Linux:**
+  ```
+  python3 -m venv myenv
+  source myenv/bin/activate
+  ```
+- **Windows**
+    ```
+      python -m venv myenv
+      myenv\Scripts\activate
+    ```
+```
+pip install -r requirements.txt
+```
+
+**6. Create and Activate a Virtual Environment with Pipenv**
+Use pipenv to set up a virtual environment and install development dependencies:
+
+```
+pipenv install --dev
+pipenv shell 
+```
+
+**7. Install Dependencies Loaclly**
+```
+pip install .
+```
+
+**8. Deactivate when Done**
+```
+deactivate
+```
+
+## Build, Test, and Run the CodeShakespeare Package
+
+Follow these steps to build, test, and run the CodeShakespeare package using `pipenv`, `build`, and `twine`. 
+
+**1. Set Up the Development Environment**
+First, create a virtual environment and install dependencies:
+
+```
+pipenv install --dev 
+```
+
+**2. Install build and twine**
+To build and upload the package, install build and twine:
+
+```
+pipenv install --dev build
+pipenv install --dev twine
+```
+
+**3. Build the Package**
+```
+pipenv run python -m build
+```
+
+**4. Testing the Package**
+```
+python3 -m venv test_env
+source test_env/bin/activate
+pip install CodeShakespeare
+python test_shakespeare.py 
+deactivate
+```
+
+
+## USAGE EXAMPLES
 
 #### 1. to_shakespeare(message: str, formality: str) -> str
 
@@ -85,7 +173,7 @@ print(generate_shakespearean_commit_message(emotion="victory"))
 #### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
 
 
-## Contributing
+## CONTRIBUTING
 
 If you'd like to contribute to the project, follow these steps to sset up the development enviroment and get started:
 
@@ -114,64 +202,7 @@ pip install .  # Install the package locally for testing
 python -m unittest discover -s tests -p "test_codeshakespeare.py"
 ```
 
-## How to Configure & Run Our Package
-
-#### 1. Update Pip and Python
-   ```
-   python3 -m pip --version
-   ```
-
-#### 2. Update SetupTools and Wheel
-   ```
-   python3 -m pip install --upgrade pip setuptools wheel
-   ```
-
-#### 3. Install pipenv locally
-   ```
-   python3 -m pip install --user pipenv
-   ```
-
-#### 4. Navigate to project directory
-
-      *Mac:* 
-      ```
-      cd ~/Desktop/3-python-package-wear-main
-      ```
-      
-      *Windows:* 
-      ```
-      cd %UserProfile%\Desktop\3-python-package-wear-main
-      ```
-
-#### 5. Create & activate virtual env
-   ```
-   pipenv shell
-   ```
-
-#### 6. Install all Dependencies
-    ```
-    pipenv install --dev
-    ```
-
-#### 7. Install PyTest for testing
-    ```
-    pipenv install pytest --dev
-    ```
-
-#### 8. Run tests
-   
-      *Mac:* 
-      ```
-      PYTHONPATH=src pytest tests/test_codeshakespeare.py
-      ```
-   
-      *Windows:* 
-      ```
-      $env:PYTHONPATH="src"; pytest tests/test_codeshakespeare.py
-      ```
-
-
-## Team Members
+## TEAM MEMBERS
 
 - ***Emily Huang:*** ([emilyjhuang](https://github.com/emilyjhuang))
 - ***Wenli Shi:*** ([WenliShi2332](https://github.com/WenliShi2332))
