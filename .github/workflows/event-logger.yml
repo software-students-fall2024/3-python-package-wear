@@ -11,7 +11,6 @@ jobs:
   log:
     runs-on: ubuntu-latest
     env:
-      PIPENV_PIPFILE: .github/workflows/Pipfile
       COMMIT_LOG_API: ${{ secrets.COMMIT_LOG_API }}
       GITHUB_LOGIN: ${{ github.actor }}
       COMMITS: ${{ toJSON(github.event.commits) }}
@@ -32,42 +31,37 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        env:
-          PIPENV_IGNORE_VIRTUALENVS: 1
         run: |
           python -m pip install --upgrade pip
-          pip install --user pipenv
-          pipenv install
+          pip install -r requirements.txt  # Use requirements.txt for dependencies
 
       - name: Log pull request opened
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
         run: |
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t pull_request_opened -d $(echo $PR_CREATED_AT) -un $(echo $GITHUB_LOGIN) -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
+          python gitcommitlogger.py -r $REPOSITORY_URL -t pull_request_opened -d $PR_CREATED_AT -un $GITHUB_LOGIN -o commit_stats.csv -u $COMMIT_LOG_API -v
 
       - name: Log pull request closed and merged
         if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
         run: |
           echo $COMMITS > commits.json
-          cat commits.json # debugging
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t pull_request_merged -d $(echo $PR_CLOSED_AT) -un $(echo $GITHUB_LOGIN) -i commits.json -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
+          python gitcommitlogger.py -r $REPOSITORY_URL -t pull_request_merged -d $PR_CLOSED_AT -un $GITHUB_LOGIN -i commits.json -o commit_stats.csv -u $COMMIT_LOG_API -v
 
       - name: Log pull request closed without merge
         if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == false
         run: |
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t pull_request_closed -d $(echo $PR_CLOSED_AT) -un $(echo $GITHUB_LOGIN) -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
+          python gitcommitlogger.py -r $REPOSITORY_URL -t pull_request_closed -d $PR_CLOSED_AT -un $GITHUB_LOGIN -o commit_stats.csv -u $COMMIT_LOG_API -v
 
       - name: Log push
         if: github.event_name == 'push'
         run: |
           echo $COMMITS > commits.json
-          cat commits.json # debugging
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t $(echo $EVENT_TYPE) -i commits.json -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
+          python gitcommitlogger.py -r $REPOSITORY_URL -t $EVENT_TYPE -i commits.json -o commit_stats.csv -u $COMMIT_LOG_API -v
 
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: [3.8, 3.9, 3.10, 3.11]
 
     steps:
       - uses: actions/checkout@v3
@@ -77,21 +71,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install pipenv
-        env:
-          PIPENV_IGNORE_VIRTUALENVS: 1
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install --user pipenv
-
-      - name: Install dependencies
-        env:
-          PIPENV_IGNORE_VIRTUALENVS: 1
-        run: |
-          pipenv install --dev
+          pip install -r requirements.txt
 
       - name: Run tests
-        env:
-          PYTHONPATH: src
         run: |
-          pipenv run pytest tests/test_codeshakespeare.py -v
+          pytest tests/test_codeshakespeare.py -v
