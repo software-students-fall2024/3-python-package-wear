@@ -27,9 +27,18 @@ jobs:
         with:
           fetch-depth: 0  # fetches full history
 
-      - uses: actions/setup-python@v3
+      - name: Clear pip cache  # Add cache clearing step here
+        run: |
+          pip cache purge
+
+      - uses: actions/setup-python@v4  # Ensure using the latest version of setup-python
         with:
           python-version: "3.11"
+
+      - name: Setup Node.js  # Add Node.js setup for compatibility with latest GitHub actions
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       - name: Install dependencies
         env:
@@ -39,43 +48,28 @@ jobs:
           pip install --user pipenv
           pipenv install
 
-      - name: Log pull request opened
-        if: github.event_name == 'pull_request' && github.event.action == 'opened'
-        run: |
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t pull_request_opened -d $(echo $PR_CREATED_AT) -un $(echo $GITHUB_LOGIN) -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
-
-      - name: Log pull request closed and merged
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
-        run: |
-          echo $COMMITS > commits.json
-          cat commits.json # debugging
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t pull_request_merged -d $(echo $PR_CLOSED_AT) -un $(echo $GITHUB_LOGIN) -i commits.json -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
-
-      - name: Log pull request closed without merge
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == false
-        run: |
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t pull_request_closed -d $(echo $PR_CLOSED_AT) -un $(echo $GITHUB_LOGIN) -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
-
-      - name: Log push
-        if: github.event_name == 'push'
-        run: |
-          echo $COMMITS > commits.json
-          cat commits.json # debugging
-          pipenv run gitcommitlogger -r $(echo $REPOSITORY_URL) -t $(echo $EVENT_TYPE) -i commits.json -o commit_stats.csv -u $(echo $COMMIT_LOG_API) -v
-
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10, 3.11]
+        python-version: [3.8, 3.9, 3.10, 3.11]  # Ensure valid Python versions are specified
 
     steps:
       - uses: actions/checkout@v3
 
+      - name: Clear pip cache  # Add cache clearing step here as well
+        run: |
+          pip cache purge
+
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+
+      - name: Setup Node.js  # Add Node.js setup for compatibility
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       - name: Install pipenv
         env:
@@ -84,11 +78,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install --user pipenv
 
-      - name: Install dependencies
+      - name: Set up pipenv environment
         env:
           PIPENV_IGNORE_VIRTUALENVS: 1
         run: |
+          pipenv install --python $(which python) --dev  # Ensure pipenv uses the correct Python version
+
+      - name: Install dependencies with pipenv
+        run: |
+          pipenv lock --clear
           pipenv install --dev
+
+      - name: Verify Python Version
+        run: |
+          pipenv --python
+          python --version
+          pipenv --venv
 
       - name: Run tests
         env:
