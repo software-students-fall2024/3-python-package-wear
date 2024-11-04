@@ -92,6 +92,7 @@ cd %UserProfile%\Desktop\3-python-package-wear-main
   python3 -m venv myenv
   source myenv/bin/activate
   ```
+
 - **Windows**
     ```
       python -m venv myenv
@@ -156,7 +157,7 @@ deactivate
 ```
 
 
-## USAGE EXAMPLES
+## Usage Examples
 
 #### 1. to_shakespeare(message: str, formality: str) -> str
 
@@ -191,12 +192,10 @@ victory, defeat, reflection
 print(generate_shakespearean_commit_message(emotion="victory"))
 ```
 
-### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
-
-#### For a complete example, see [testing_shakespeare.py](./example_shakespeare.py)
+### For a complete example, see [example_shakespeare.py](./example_shakespeare.py)
 
 
-## CONTRIBUTING
+## Contributing
 
 If you'd like to contribute to the project, follow these steps to sset up the development enviroment and get started:
 
